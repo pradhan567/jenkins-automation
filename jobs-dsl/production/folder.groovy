@@ -1,3 +1,7 @@
 folder('demo-folder') {
-    description('Initial version -2 ')
+    description('Version 3')
+
+    properties {
+        // empty block
+    }
 }
