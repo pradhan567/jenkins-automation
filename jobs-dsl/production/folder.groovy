@@ -4,7 +4,21 @@ folder('demo-folder') {
             libraries {
                 libraryConfiguration {
                     name("demo-lib")
-                    defaultVersion("master")
+                    defaultVersion("main")
+                    implicit(false)
+                    allowVersionOverride(true)
+
+                    retriever {
+                        modernSCM {
+                            scm {
+                                git {
+                                    remote {
+                                        url("https://github.com/jenkinsci/job-dsl-plugin.git")
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
