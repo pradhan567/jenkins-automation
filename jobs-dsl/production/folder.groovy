@@ -9,17 +9,13 @@ folder('demo-folder') {
                     allowVersionOverride(true)
 
                     retriever {
-                        modernSCM {
-                            scm(class: 'hudson.plugins.git.GitSCM') {
-                                userRemoteConfigs {
-                                    userRemoteConfig {
+                        legacySCM {
+                            scm {
+                                git {
+                                    remote {
                                         url('https://github.com/jenkinsci/job-dsl-plugin.git')
                                     }
-                                }
-                                branches {
-                                    branchSpec {
-                                        name('*/main')
-                                    }
+                                    branch('*/main')
                                 }
                             }
                         }
